@@ -15,12 +15,13 @@ function [] = test()
 x=fscanf(fileI,"%s");
 counter=1;
 folder={};
+enco="";
 for i=1
     for j=1:length(x) 
        folder{i,j} = x(i,j) ;
        counter = counter + 1 ;
     end
-    
+    enco=strcat(enco,folder);
 end
 
 encoded = Huffmanencoding(folder,dict);
