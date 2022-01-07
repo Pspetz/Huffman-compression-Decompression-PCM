@@ -2,28 +2,28 @@
 
     
 
-   
+
     for i = 1:length( prob )    
-        bitofsymbol{i} = '';      % Create an empty codeword.
-        indexsymb{i} = i;          % Index the codeword.
-        word(i) = alfavito(i);  % Append it's symbol.
+        bitofsymbol{i} = '';     
+        indexsymb{i} = i;          
+        word(i) = alfavito(i); 
     
     end
 
        
-    while ( prob ~=  1 ) % Loop, until we reach the root.
-        % Sort the probabilities at every loop.
-        [~, z] = sort(prob);  % Get arrangement of the sorted probabilities.
-        % Get the index of the two sets to be merged.
+    while ( prob ~= 289.1403 ) 
+       
+        [~, z] = sort(prob);
+       
         last = z(1);
         next = z(2);
-        % Get their main index or indexes.
+       
         deksia_thesi = indexsymb{last};
         aristeri_thesi  = indexsymb{next};
-        % Get their probabilities.
+        
         deksia_pithanotita = prob(last); 
         aristeri_pithanotita  = prob(next); 
-        % Append them in a new set.
+       
         merged_set = [deksia_thesi, aristeri_thesi];
         new_prob   = deksia_pithanotita + aristeri_pithanotita;
         % Debug logging.
@@ -49,7 +49,7 @@
     
     dict.indexsymb = alfavito;
     dict.bitofsymbol = bitofsymbol;
-    fid = fopen('NEWdict.txt','wt');
+    fid = fopen('C:\Users\User\Documents\MATLAB\Νέος φάκελος\NEWdict.txt','wt');
     
     for i = 1:length(alfavito)
     fprintf(fid,'%s\t',alfavito{i},bitofsymbol{i});
