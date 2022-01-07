@@ -18,7 +18,7 @@ y=0;
 saveprob = [];
 for j=1:length(newfile)
     A=cell2mat(newfile(j));
-        for i=1:length(A) %length=2 stoixeia se kathe cell
+        for i=1:length(A)
            y=y+ sadd(A(i),alphabet,prob);
         end 
        newprob(j)=y;
@@ -27,10 +27,12 @@ for j=1:length(newfile)
 end 
     saveprob = [saveprob newprob ] ;
     
+    %sto huffmandictionary kanw tin allagi
+    %while ( prob ~= 289.1403 ) 
+    %kai epeita trexw edw to arxeio
     dict =Huffmandictionary(newfile,saveprob);
     
     
-    
-    %-----------------------------------------%
+ 
     meso_mikos_kwdika=eff_calc(dict,saveprob);
     disp(meso_mikos_kwdika)

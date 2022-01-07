@@ -1,26 +1,23 @@
-function [] = askisi1_erwtima3()
+function [] = testerwtima2()
 
-% https://en.wikipedia.org/wiki/Letter_frequency
-%GIA NA TREKSEI AUTO TO ERWTIMA:
-%auti tin fora sto Huffmandictionary, 
-%kanw thn allagh:while ( prob ~=  1 )
-alphabet = {'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'};
-prob= [ .08167 .01492 .02782 .04253 .12702 .02228 .02015 .06094 .06966 .00153 .00772 .04025 .02406 .06749 .07507 .01929 .00095 .05987 .06327 .09056 .02758 .00978 .02361 .00150 .01974 .00074 ];
+ 
+ alphabet = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","space" } ;
+ prob = [0.0698,0.0128,0.023,0.0364,0.1086,0.0190,0.0172,0.0521,0.0595,0.0013,0.0066,0.0344,0.0206,0.0577,0.0642,0.0165,0.0008,0.0512,0.0541,0.0774,0.0236,0.0084,0.0202,0.0013,0.0169,0.0006,0.1453];
+ dict = Huffmandictionary(alphabet,prob);
 
-dict = Huffmandictionary(alphabet,prob);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  disp("String :");
  fileI=fopen('cvxopt.txt','r');
 x=fscanf(fileI,"%s");
 counter=1;
 folder={};
+enco="";
 for i=1
     for j=1:length(x) 
        folder{i,j} = x(i,j) ;
        counter = counter + 1 ;
     end
-    
+    enco=strcat(enco,folder);
 end
 
 encoded = Huffmanencoding(folder,dict);
@@ -33,9 +30,7 @@ fid = fopen('C:\Users\User\Documents\MATLAB\Νέος φάκελος\charstobits.
     end
  fclose(fid)
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 decoded = Huffmandecoding(encoded,dict);
 disp("Decoding :")
@@ -49,11 +44,8 @@ fclose(fid)
 
 length(encoded)
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 meso_mikos_kwdika=eff_calc(dict,prob);
 disp(meso_mikos_kwdika)
-
 end
-
-
