@@ -1,17 +1,15 @@
 function calc_sqnrB()
 
-fprintf('==> epsilon value is the machine eps: %d\n', eps);
-
 for n=2
     % Basic runs.
-    x = sourceB(10);
-    x1= sourceB(10);
+    x = sourceB(10000);
+    x1= sourceB(10000);
     [xq, centers, D] = 	PCM(x, n, -1, 1);
-    [idx,C] = kmeans(x1,n)
+    [idx,C] = kmeans(x1,n);
     %PLOT
-    plot(x,'-r'); title("2-bit non-uniform quantization"); 
+    plot(x,'-r'); title("2-bit quantization"); 
     hold on 
-    plot(x1,'-b'); title("2-bit quantization Kmeans");
+    plot(x1,'-b'); title("2-bit quantization");
     legend('non-uniform quantization','Kmeans quantization')
     hold off
     %MSE
@@ -44,10 +42,10 @@ end
 
 for n=3
    % Basic runs.
-    x = sourceB(10);
-    x1= sourceB(10);
+    x = sourceB(10000);
+    x1= sourceB(10000);
     [xq, centers, D] = 	PCM(x, n, -1, 1);
-    [idx,C] = kmeans(x1,n)
+    [idx,C] = kmeans(x1,n);
     %MSE
     disp("calculate MSE for 3bit non-uniform Quantization:")
     err = ar( x , 3 )
@@ -55,9 +53,9 @@ for n=3
     err = ar( x1 , 3 )
     %Plot
     figure;
-     plot(x,'-r'); title("3-bit non-uniform quantization"); 
+     plot(x,'-r'); title("3-bitquantization"); 
     hold on 
-    plot(x1,'-b'); title("3-bit non-uniform quantization");
+    plot(x1,'-b'); title("3-bit  quantization");
     legend('non-uniform quantization','Kmeans quantization')
     hold off
     
@@ -85,10 +83,10 @@ end
 
 for n=4
    % Basic runs.
-    x = sourceB(10);
-    x1= sourceB(10);
+    x = sourceB(10000);
+    x1= sourceB(10000);
     [xq, centers, D] = 	PCM(x, n, -1, 1);
-    [idx,C] = kmeans(x1,n)
+    [idx,C] = kmeans(x1,n);
      %MSE
     disp("calculate MSE for 4bit non-uniform Quantization:")
     err = ar( x , 4 )
@@ -96,9 +94,9 @@ for n=4
     err = ar( x1 , 4 )
     %plot
     figure;
-    plot(x,'-r'); title("4-bit non-uniform quantization"); 
+    plot(x,'-r'); title("4-bit quantization"); 
     hold on 
-    plot(x1,'-b'); title("4-bit quantization Kmeans");
+    plot(x1,'-b'); title("4-bit quantization");
     legend('non-uniform quantization','Kmeans quantization')
     hold off
     
