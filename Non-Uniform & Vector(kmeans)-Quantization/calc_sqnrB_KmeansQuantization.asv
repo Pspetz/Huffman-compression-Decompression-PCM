@@ -58,7 +58,7 @@
  trito=plot(ykbant4,'-r'); title("4-bit vec-quantization");  
  
  
- 
+ finalsqnr =
  
  
  %MESI PARAMORFWSI GIA KMEANS
@@ -66,10 +66,9 @@
  figure;
  plot(mse','r'); title("mean squared error");
  
-%METAVOLI TOU SQNR(erwtima 2a)
-sqnr_ol=[loydsqnr2 loydsqnr3 loydsqnr4];
-figure;
- plot(sqnr_ol,'-b'); title("sqnr for kmeans");
-
-
-
+ figure;
+ 
+ plot(bn,loydsqnr2,'r',bn,loydsqnr3,'g',bn,loydsqnr4,'b');
+ legend('2-bit','3-bit','4-bit');
+ xlabel("times");
+ ylabel("sqnr");
