@@ -1,9 +1,10 @@
 
+
 %counters 
 counter1=1;
 bit_eisodou = 10^4;
 
-BER_fsk1(counter1, 1) = 0;
+SER_fsk1(counter1, 1) = 0;
 for SNR = 0:5:40
     M=2;
     dyadikif = eisodos_dyadiki(bit_eisodou);
@@ -15,7 +16,7 @@ for SNR = 0:5:40
     symbolsf = foratis(apodiamf, 'FSK');
     eksodosf = demapper(symbolsf, 'FSK', 0);
     
-    BER_fsk1(counter1, 1) = biterror(dyadikif, eksodosf);
+    SER_fsk1(counter1, 1) = symbolerror(symbolaf, symbolsf);
      
    
     
@@ -29,7 +30,7 @@ end
 counter3=1;
 bit_eisodou2 = 10^4;
 
-BER_fsk2(counter3, 1) = 0;
+SER_fsk2(counter3, 1) = 0;
 for SNR = 0:5:40
     M=4;
     dyadikif = eisodos_dyadiki(bit_eisodou2);
@@ -41,7 +42,7 @@ for SNR = 0:5:40
     symbolsf = foratis(apodiamf, 'FSK');
     eksodosf = demapper(symbolsf, 'FSK', 0);
     
-    BER_fsk2(counter3, 1) = biterror(dyadikif, eksodosf);
+    SER_fsk2(counter3, 1) = symbolerror(symbolaf, symbolsf);
      
     counter3 = counter3 + 1;
     
@@ -55,7 +56,7 @@ counter5=1;
 bit_eisodou2 = 10^4;
 
 
-BER_fsk3(counter5, 1) = 0;
+SER_fsk3(counter5, 1) = 0;
 for SNR = 0:5:40
     M=8;
     dyadikif = eisodos_dyadiki(bit_eisodou2);
@@ -67,7 +68,7 @@ for SNR = 0:5:40
     symbolsf = foratis(apodiamf, 'FSK');
     eksodosf = demapper(symbolsf, 'FSK', 0);
     
-    BER_fsk3(counter5, 1) = biterror(dyadikif, eksodosf);
+    SER_fsk3(counter5, 1) = symbolerror(symbolaf, symbolsf);
      
    
     
@@ -78,14 +79,8 @@ end
 
 %-----------------PLOT----------------
 s_N_R1 = [0: 5: 40];
-semilogy(s_N_R1', BER_fsk1, 'm.-',s_N_R1', BER_fsk2, 'b.-',s_N_R1', BER_fsk3, 'k.-');
-legend('ber M=2 4-FSK',"ber M=4 4-FSK'","ber M=8 4-FSK'");
+semilogy(s_N_R1', SER_fsk1, 'm.-',s_N_R1', SER_fsk2, 'b.-',s_N_R1', SER_fsk3, 'k.-');
+legend('ser M=2 4-FSK',"ser M=4 4-FSK'","ser M=8 4-FSK'");
 title(' M-FSK ');
 xlabel('SNR');
-ylabel('BER');
-
-
-
-
-
-
+ylabel('SER');
