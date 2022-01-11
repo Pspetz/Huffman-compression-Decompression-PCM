@@ -1,4 +1,4 @@
-function symbola = apofasi(r, kwdikop,M)
+function symbola = apofasi(r, kwdikop)
 %FORATIS:pairnei to orisma r kai upologizi to
 %binary h gray pou prokeitai na stalthei
 [z, ~] = size(r);
@@ -22,7 +22,7 @@ if kwdikop == 'FSK'
     end
 end
 
-	% 4th = 0th
-symbola = mod(symbola,M);
+	%apo 0-4
+symbola = mod(symbola,4);
 
 end

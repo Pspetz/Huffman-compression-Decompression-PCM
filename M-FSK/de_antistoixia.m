@@ -2,7 +2,7 @@ function eksodos = de_antistoixia(symbols, epilogh, gray)
 %h sunartisi pairnei ws eisodo ta sumvola kai ta metatrepei
 %apo symvola - > bits
 if gray == 1
-    symbols = gray2bin(symbols, epilogh, 4);
+    symbols = gray2bin(symbols, epilogh, 8);
 end
 
 eksodos = dec2bin(symbols);

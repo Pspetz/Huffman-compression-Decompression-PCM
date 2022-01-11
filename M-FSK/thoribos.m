@@ -3,7 +3,7 @@ function en_noise = thoribos(signal_diadosis, snr,M)
 %tou snr kai prosthetei AWG
 %energeia
 Es = 1; 
-Eb = Es / M;
+Eb = Es / log2(M);
 No = Eb / (10^(snr/10));
 [y,t] = size(signal_diadosis);
 % dimiourgoume gaussian katanomi me mesi timh
