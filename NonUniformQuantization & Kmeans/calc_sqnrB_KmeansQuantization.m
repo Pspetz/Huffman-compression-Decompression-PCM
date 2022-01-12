@@ -10,7 +10,7 @@
 
  %upologismos tou sqnr se db
  loydsqnr2=10*log10(Psig2/Pnois2); 
- fprintf('SQNR of 2-bit quantization (random sample of vector quantization) is %f dBs\n', loydsqnr2);
+ fprintf('SQNR of 5000-biτ quantization (random sample of vector quantization) is %f dBs\n', loydsqnr2);
  
  
  
@@ -26,7 +26,7 @@
 
  %upologismos tou sqnr se db
  loydsqnr3=10*log10(Psig3/Pnois3); 
- fprintf('SQNR of 3-bit quantization (random sample of vector quantization) is %f dBs\n', loydsqnr3);
+ fprintf('SQNR of 6000-bit quantization (random sample of vector quantization) is %f dBs\n', loydsqnr3);
 
 
  %------------ n =  ---------------------
@@ -39,7 +39,7 @@
 
  %upologismos tou sqnr se db
  loydsqnr4=10*log10(Psig4/Pnois4); 
- fprintf('SQNR of 4-bit quantization (random sample of vector quantization) is %f dBs\n', loydsqnr4);
+ fprintf('SQNR of 7000-bit quantization (random sample of vector quantization) is %f dBs\n', loydsqnr4);
 
  
  
